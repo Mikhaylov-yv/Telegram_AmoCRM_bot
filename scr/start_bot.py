@@ -1,12 +1,24 @@
-import asyncio
-import telegram
+import logging
+from telegram import Update
+from telegram.ext import ApplicationBuilder, CallbackContext, CommandHandler
 import json
 
-async def main():
-    bot = telegram.Bot(json.load(open('../telegram_conf.json', 'r'))['token'])
-    async with bot:
-        print((await bot.get_updates())[0])
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.INFO
+)
+
+
+async def start(update: Update, context: CallbackContext.DEFAULT_TYPE):
+    print(update['message']['date'])
+    print(update['message']['from'])
+    await context.bot.send_message(chat_id=update.effective_chat.id, text="Я бот, пожалуйста, поговорите со мной!")
 
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    application = ApplicationBuilder().token(json.load(open('telegram_conf.json', 'r'))['token']).build()
+
+    start_handler = CommandHandler('start', start)
+    application.add_handler(start_handler)
+
+    application.run_polling()
