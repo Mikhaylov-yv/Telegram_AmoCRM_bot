@@ -12,4 +12,5 @@
     -- /getdoc
     ---- Ждет морер документа, в ответ направляет сам документ
     /close закончить общение 
-    
+
+Моя реализация доступна по ссылке [https://t.me/AmoCRM_test_mikhaylov_bot](https://t.me/AmoCRM_test_mikhaylov_bot)
