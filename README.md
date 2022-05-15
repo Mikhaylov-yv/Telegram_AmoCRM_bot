@@ -14,3 +14,5 @@
     /close закончить общение 
 
 Моя реализация доступна по ссылке [https://t.me/AmoCRM_test_mikhaylov_bot](https://t.me/AmoCRM_test_mikhaylov_bot)
+
+![img.png](img.png)
