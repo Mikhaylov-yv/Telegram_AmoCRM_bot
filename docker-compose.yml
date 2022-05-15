@@ -2,5 +2,6 @@ version: "3"
 
 services:
   bot.amocrm:
-    container_name: Telegram_AmoCRM_bot
+    platform: linux/arm64/v8
+    container_name: Telegram_AmoCRM_bot_rasb
     build: .
